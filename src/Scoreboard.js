@@ -1,5 +1,10 @@
-export default function Scoreboard() {
+function Scoreboard() {
     return (
-        <h1>Scoreboard</h1>
+        <div>
+            <h1>Scoreboard</h1>
+            <button className="btn-round">hey</button>
+        </div>
     );
 }
+
+export default Scoreboard;
