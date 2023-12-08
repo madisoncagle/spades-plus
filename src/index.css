@@ -9,15 +9,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Poppins";
     /* outline: 1px solid salmon; */
 }
 
 body {
-    font-family: "Poppins", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 code {
@@ -25,8 +30,14 @@ code {
         monospace;
 }
 
-button {
+button,
+a {
     cursor: pointer;
+    transition: all 0.2s;
+}
+
+main {
+    flex: 1;
 }
 
 
@@ -45,7 +56,7 @@ button {
     font-size: 5rem;
 }
 
-.btn-round {
+.bdr-round-1 {
     padding: 0.25rem 0.5rem;
     border-radius: 1rem;
     font-weight: 600;
@@ -76,12 +87,20 @@ button {
     border-width: 3px;
 }
 
+.bdr-5 {
+    border-width: 5px;
+}
+
 .bg-black {
     background-color: #000;
 }
 
 .bg-white {
     background-color: #fff;
+}
+
+.txt-black {
+    color: #000;
 }
 
 .txt-white {
@@ -92,6 +111,26 @@ button {
     text-align: center;
 }
 
+.txt-small {
+    font-size: small;
+}
+
+.txt-125 {
+    font-size: 1.25rem;
+}
+
+.txt-semibold {
+    font-weight: 600;
+}
+
+.txt-italic {
+    font-style: italic;
+}
+
+.pad-all-1 {
+    padding: 1rem;
+}
+
 .pad-ver-1 {
     padding: 1rem 0;
 }
@@ -100,6 +139,104 @@ button {
     padding: 0 1rem;
 }
 
-.pad-all-1 {
-    padding: 1rem;
+.pad-top-1 {
+    padding: 1rem 0 0;
+}
+
+.pad-bot-1 {
+    padding: 0 0 1rem;
+}
+
+.flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.ver-gap-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: #0f0;
+}
+
+/* player card */
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: #000;
+    color: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 0.25rem 0.25rem rgba(85, 85, 85, 0.25);
+    height: 200px;
+    width: 200px;
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.2s;
+}
+
+.close:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+
+/* IDS */
+
+#add-player-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* gap: 0.2rem; */
+    color: #000;
+    background-color: transparent;
+    /* border: 5px solid #000; */
+    border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
+}
+
+#add-player-btn .fa-user {
+    font-size: 2rem;
+    margin-left: 0.3rem;
+}
+
+#add-player-btn .fa-plus {
+    font-size: 1rem;
+}
+
+#add-player-btn:hover {
+    color: #fff;
+    background-color: #000;
 }

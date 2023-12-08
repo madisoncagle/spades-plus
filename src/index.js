@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Scoreboard from './Scoreboard';
+import Scoreboard from './components/Scoreboard';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

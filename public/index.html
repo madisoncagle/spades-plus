@@ -25,7 +25,7 @@
     <title>Spades+</title>
 </head>
 
-<body>
+<body class="bg-white">
     <noscript>You need to enable JavaScript to run this app.</noscript>
 
     <!-- header -->
@@ -39,15 +39,26 @@
         </div>
     </header>
 
-    <div id="root" class="container bg-white"></div>
+    <!-- main -->
+    <main class="pad-ver-1">
+        <div class="container ver-gap-1">
+            <h2 class="txt-center">SCOREBOARD</h2>
+
+            <!-- react elements go here -->
+            <div id="root" class="container flex-wrap"></div>
+        </div>
+    </main>
 
     <!-- footer -->
     <footer class="bg-black pad-ver-1">
-        <div class="container">
-            <p class="txt-white">created 2023 by madison cagle</p>
-            <a href="https://github.com/madisoncagle"><i class="fa-brands fa-github"></i></a>
+        <div class="container flex-space-between">
+            <p class="txt-white txt-small txt-semibold">created 2023 by madison cagle</p>
+            <a href="https://github.com/madisoncagle" class="link txt-white"><i
+                    class="fa-brands fa-github txt-125"></i></a>
         </div>
     </footer>
+
+    <script src="https://kit.fontawesome.com/4c73f55e5d.js" crossorigin="anonymous"></script>
 
     <!--
       This HTML file is a template.
