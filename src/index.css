@@ -52,15 +52,14 @@ main {
     font-family: "Digital";
 }
 
-.score {
-    font-size: 5rem;
+.btn-default {
+    padding: 0.25rem 0.5rem;
+    font-weight: 600;
+    background-color: transparent;
 }
 
 .bdr-round-1 {
-    padding: 0.25rem 0.5rem;
     border-radius: 1rem;
-    font-weight: 600;
-    background-color: transparent;
 }
 
 .bdr-black {
@@ -87,6 +86,10 @@ main {
     border-width: 3px;
 }
 
+.bdr-4 {
+    border-width: 4px;
+}
+
 .bdr-5 {
     border-width: 5px;
 }
@@ -105,6 +108,14 @@ main {
 
 .txt-white {
     color: #fff;
+}
+
+.txt-green {
+    color: #0f0;
+}
+
+.txt-red {
+    color: #f00;
 }
 
 .txt-center {
@@ -162,8 +173,18 @@ main {
 .flex-wrap {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.gap-half {
+    gap: 0.5rem;
+}
+
+.gap-2 {
     gap: 2rem;
 }
 
@@ -194,8 +215,7 @@ main {
     color: #fff;
     border-radius: 1.5rem;
     box-shadow: 0.25rem 0.25rem rgba(85, 85, 85, 0.25);
-    height: 200px;
-    width: 200px;
+    min-width: 21.5rem;
 }
 
 .close {
@@ -203,12 +223,117 @@ main {
     top: 1rem;
     right: 1rem;
     color: rgba(255, 255, 255, 0.5);
+    font-size: 1.5rem;
     transition: all 0.2s;
 }
 
 .close:hover {
     cursor: pointer;
     color: #fff;
+}
+
+.name-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+    height: 3rem;
+}
+
+.name {
+    font-size: 1.75rem;
+}
+
+.bid-history {
+    width: 5.125rem;
+    /* height: 100%; */
+}
+
+.past-bid {
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 50%;
+}
+
+.past-bid.right {
+    background-color: #0f0;
+}
+
+.past-bid.wrong {
+    background-color: #f00;
+}
+
+.score-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7rem;
+}
+
+.bid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* min-width: 3.125rem; */
+    height: 100%;
+}
+
+.bid-btn {
+    padding: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+}
+
+.bid-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.bid-num {
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+}
+
+.score {
+    font-size: 7rem;
+    width: 100%;
+    text-align: center;
+}
+
+.yes-no {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.yes-no-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    width: 3.125rem;
+    height: 3.125rem;
+}
+
+.yes-no-btn:hover {
+    color: #000;
+}
+
+.plus:hover {
+    background-color: #0f0;
+}
+
+.minus:hover {
+    background-color: #f00;
 }
 
 
