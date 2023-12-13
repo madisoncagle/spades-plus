@@ -1,22 +1,24 @@
-function PlayerCard() {
+import PastBid from "./PastBid";
+
+function PlayerCard({ name, onRemove }) {
     return (
         <div className="card">
-            <i className="fa-solid fa-xmark close"></i>
+            <i className="fa-solid fa-xmark close" onClick={onRemove}></i>
 
             <div className="name-row">
                 {/* prop */}
-                <h3 className="name">Player</h3>
+                <h3 className="name">{name}</h3>
 
                 <div className="bid-history flex-wrap gap-half">
                     {/* list? */}
-                    <div className="past-bid right"></div>
-                    <div className="past-bid wrong"></div>
-                    <div className="past-bid right"></div>
-                    <div className="past-bid right"></div>
-                    <div className="past-bid right"></div>
-                    <div className="past-bid wrong"></div>
-                    <div className="past-bid right"></div>
-                    <div className="past-bid wrong"></div>
+                    <PastBid status="right" />
+                    <PastBid status="wrong" />
+                    <PastBid status="right" />
+                    <PastBid status="right" />
+                    <PastBid status="right" />
+                    <PastBid status="wrong" />
+                    <PastBid status="right" />
+                    <PastBid status="wrong" />
                 </div>
             </div>
 

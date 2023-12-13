@@ -1,7 +1,6 @@
-function AddPlayerBtn() {
+function AddPlayerBtn({ onAdd }) {
     return (
-        // function
-        <button type="button" id="add-player-btn" className="bdr-5 bdr-solid bdr-black">
+        <button type="button" id="add-player-btn" className="bdr-5 bdr-solid bdr-black" onClick={onAdd}>
             <i class="fa-solid fa-user"></i>
             <i class="fa-solid fa-plus"></i>
         </button>

@@ -204,6 +204,10 @@ main {
     color: #0f0;
 }
 
+.no-bullets {
+    list-style: none;
+}
+
 /* player card */
 .card {
     position: relative;
