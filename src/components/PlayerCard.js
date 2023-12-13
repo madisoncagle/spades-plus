@@ -3,7 +3,7 @@ import PastBid from "./PastBid";
 function PlayerCard({ name, onRemove }) {
     return (
         <div className="card">
-            <i className="fa-solid fa-xmark close" onClick={onRemove}></i>
+            <i className="fa-solid fa-xmark close" onClick={() => onRemove(name)}></i>
 
             <div className="name-row">
                 {/* prop */}
