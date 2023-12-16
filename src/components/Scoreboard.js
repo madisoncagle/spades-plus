@@ -19,23 +19,14 @@ function Scoreboard() {
 
     // METHODS
     function addPlayer(name = "Player") {
-        // const newPlayers = players.concat({ id: Date.now(), name: "Player" });
-        // console.log(newPlayers);
-
-        // not working
-        var currentPlayers = players;
-        currentPlayers.push({ id: Date.now(), name: Date.now() });
-        setPlayers(currentPlayers);
-
-        console.log(players);
+        setPlayers([...players, { id: Date.now(), name: players.length + 1 }]);
     }
 
     function removePlayer(name) {
-        // fix
         for (let i = 0; i < players.length; i++) {
             if (players[i].name === name) {
-                console.log(`removing ${players[i].id}, ${players[i].name}`)
-                setPlayers(players.slice(i, i + 1));
+                const newPlayers = players.slice(0, i).concat(players.slice(i + 1));
+                setPlayers(newPlayers);
             }
         }
     }
