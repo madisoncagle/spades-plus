@@ -13,7 +13,7 @@ function Scoreboard() {
     const playerList = players.map(player => {
         return (
             <li key={player.id}>
-                <PlayerCard name={player.name} onRemove={() => removePlayer(player.name)} />
+                <PlayerCard name={player.name} onRemove={() => removePlayer(player.id)} />
             </li>
         )
     });
@@ -21,12 +21,17 @@ function Scoreboard() {
 
     // METHODS
     function addPlayer(name) {
-        setPlayers([...players, { id: Date.now(), name: players.length + 1 }]);
+        // show warning if empty
+        if (name != "") {
+            // set players
+            setPlayers([...players, { id: Date.now(), name }]);
+            setHideModal(true);
+        }
     }
 
-    function removePlayer(name) {
+    function removePlayer(id) {
         for (let i = 0; i < players.length; i++) {
-            if (players[i].name === name) {
+            if (players[i].id === id) {
                 const newPlayers = players.slice(0, i).concat(players.slice(i + 1));
                 setPlayers(newPlayers);
             }
@@ -41,12 +46,12 @@ function Scoreboard() {
     // RETURN
     return (
         <div className="scoreboard">
-            <Modal display={hideModal} onClose={toggleModal} />
+            <Modal display={hideModal} onClose={toggleModal} onAdd={addPlayer} />
 
             <ul className="flex-center flex-wrap gap-2 no-bullets">
-                <li>
+                {/* <li>
                     <PlayerCard name="Default" onRemove={removePlayer} />
-                </li>
+                </li> */}
 
                 {playerList}
 

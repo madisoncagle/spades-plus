@@ -1,21 +1,29 @@
-function Modal({ display, onClose }) {
+import { useState } from "react";
+
+function Modal({ display, onClose, onAdd }) {
+    // STATE
+    const [input, setInput] = useState("");
+
+
+    // RETURN
     return (
         <div id="add-player-modal" className="modal" hidden={display}>
 
             <div className="modal-content">
-                <div className="modal-header">
-                    <h3>NEW PLAYER</h3>
-                    <i className="fa-solid fa-xmark modal-close" onClick={onClose}></i>
+                <i className="fa-solid fa-xmark modal-close" onClick={onClose}></i>
+
+                <h3>NEW PLAYER</h3>
+
+                <div className="modal-middle">
+                    <div className="modal-name-input">
+                        <label htmlFor="new-name">player name</label>
+                        <input type="text" name="new-name" id="new-name" value={input} onInput={e => setInput(e.target.value)} />
+                    </div>
+
+                    <p className="modal-warning" hidden={input != ""}>please enter a name</p>
                 </div>
 
-                <div className="modal-name-input">
-                    <label htmlFor="new-name">player name</label>
-                    <input type="text" name="new-name" id="new-name" />
-                </div>
-
-                <p className="modal-warning">please enter a name</p>
-
-                <button type="submit" id="submit-player-name">ADD</button>
+                <button type="submit" id="submit-player-name" className="btn-default bdr-round-1 bdr-3 bdr-solid bdr-black bg-white" onClick={() => onAdd(input)}>ADD</button>
             </div>
 
         </div>
