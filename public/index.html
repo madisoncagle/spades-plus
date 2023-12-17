@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Web site created using create-react-app" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -30,12 +30,9 @@
 
     <!-- header -->
     <header class="bg-black pad-ver-1">
-        <div class="container">
+        <div class="container header">
             <h1 class="txt-white">SPADES+</h1>
-            <!-- <nav>
-                <button class="nav-section active">scoreboard</button>
-                <button class="nav-section">rules</button>
-            </nav> -->
+            <a href="." class="link txt-white"><p>new game &nbsp;</p><i class="fa-solid fa-pen-to-square"></i></a>
         </div>
     </header>
 
@@ -45,7 +42,7 @@
             <h2 class="txt-center">SCOREBOARD</h2>
 
             <!-- react elements go here -->
-            <div id="root" class="container flex-wrap"></div>
+            <div id="root" class="flex-wrap"></div>
         </div>
     </main>
 

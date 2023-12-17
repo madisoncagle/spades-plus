@@ -33,6 +33,7 @@ code {
 button,
 a {
     cursor: pointer;
+    text-decoration: none;
     transition: all 0.2s;
 }
 
@@ -220,6 +221,12 @@ main {
 
 .no-bullets {
     list-style: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* player card */
@@ -431,6 +438,10 @@ main {
 
 
 /* IDS */
+
+#root {
+    margin: 0 auto;
+}
 
 #add-player-btn {
     display: flex;
