@@ -2,10 +2,24 @@ import { useState } from "react";
 import BidMinus from "./BidMinus";
 import BidPlus from "./BidPlus";
 import PastBid from "./PastBid";
+import YesBtn from "./YesBtn";
+import NoBtn from "./NoBtn";
 
 function PlayerCard({ name, onRemove }) {
     // STATE
     const [bid, setBid] = useState(0);
+    const [score, setScore] = useState(0);
+    const [pastBids, setPastBids] = useState([]);
+
+
+    // VARS
+    const pastBidList = pastBids.map((bid, i) => {
+        return (
+            <li key={i}>
+                <PastBid status={bid} />
+            </li>
+        )
+    });
 
 
     // METHODS
@@ -19,6 +33,17 @@ function PlayerCard({ name, onRemove }) {
         }
     }
 
+    function gotIt() {
+        setScore(score + 10 + bid);
+        setPastBids(pastBids.concat("right"));
+        setBid(0);
+    }
+
+    function nope() {
+        setPastBids(pastBids.concat("wrong"));
+        setBid(0);
+    }
+
 
     // RETURN
     return (
@@ -28,17 +53,9 @@ function PlayerCard({ name, onRemove }) {
             <div className="name-row">
                 <h3 className="name">{name}</h3>
 
-                <div className="bid-history flex-wrap gap-half">
-                    {/* list */}
-                    <PastBid status="right" />
-                    <PastBid status="wrong" />
-                    <PastBid status="right" />
-                    <PastBid status="right" />
-                    <PastBid status="right" />
-                    <PastBid status="wrong" />
-                    <PastBid status="right" />
-                    <PastBid status="wrong" />
-                </div>
+                <ul className="bid-history flex-wrap gap-half no-bullets">
+                    {pastBidList}
+                </ul>
             </div>
 
             <div className="score-row">
@@ -55,19 +72,13 @@ function PlayerCard({ name, onRemove }) {
 
                 {/* prop */}
                 <p className="score number">
-                    888
+                    {score}
                 </p>
 
                 <div className="yes-no">
-                    {/* function */}
-                    <button className="yes-no-btn plus bdr-4 bdr-solid bdr-green bg-black txt-green">
-                        <i className="fa-solid fa-check"></i>
-                    </button>
+                    <YesBtn onYes={gotIt} />
 
-                    {/* function */}
-                    <button className="yes-no-btn minus bdr-4 bdr-solid bdr-red bg-black txt-red">
-                        <i className="fa-solid fa-xmark"></i>
-                    </button>
+                    <NoBtn onNo={nope} />
                 </div>
             </div>
         </div>
