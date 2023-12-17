@@ -7,6 +7,7 @@ function Scoreboard() {
     // STATE
     const [players, setPlayers] = useState([]);
     const [hideModal, setHideModal] = useState(true);
+    const [hideModalWarning, setHideModalWarning] = useState(true);
 
 
     // VARS
@@ -21,11 +22,12 @@ function Scoreboard() {
 
     // METHODS
     function addPlayer(canAdd, name) {
-        // show warning if empty
         if (canAdd) {
-            // set players
+            setHideModalWarning(true);
             setPlayers([...players, { id: Date.now(), name }]);
             setHideModal(true);
+        } else {
+            setHideModalWarning(false);
         }
     }
 
@@ -46,7 +48,7 @@ function Scoreboard() {
     // RETURN
     return (
         <div className="scoreboard">
-            <Modal hidden={hideModal} onAdd={addPlayer} onClose={toggleModal} />
+            <Modal hidden={hideModal} onAdd={addPlayer} onClose={toggleModal} hideWarning={hideModalWarning} />
 
             <ul className="flex-center flex-wrap gap-2 no-bullets">
                 {/* <li>
