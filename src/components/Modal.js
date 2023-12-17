@@ -17,7 +17,7 @@ function Modal({ value, hidden, onAdd, onClose, onInput, hideWarning }) {
                     <p className="modal-warning" hidden={hideWarning}>please enter a name</p>
                 </div>
 
-                <button type="submit" id="submit-player-name" className="btn-default bdr-round-1 bdr-3 bdr-solid bdr-black bg-white" onClick={onAdd}>ADD</button>
+                <button type="submit" id="submit-player-name" className="btn-default bdr-round-1 bdr-3 bdr-solid bdr-black txt-black bg-white" onClick={onAdd}>ADD</button>
             </div>
 
         </div>
