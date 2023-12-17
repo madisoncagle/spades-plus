@@ -1,6 +1,26 @@
+import { useState } from "react";
+import BidMinus from "./BidMinus";
+import BidPlus from "./BidPlus";
 import PastBid from "./PastBid";
 
 function PlayerCard({ name, onRemove }) {
+    // STATE
+    const [bid, setBid] = useState(0);
+
+
+    // METHODS
+    function add() {
+        setBid(bid + 1);
+    }
+
+    function minus() {
+        if (bid > 0) {
+            setBid(bid - 1);
+        }
+    }
+
+
+    // RETURN
     return (
         <div className="card">
             <i className="fa-solid fa-xmark close" onClick={onRemove}></i>
@@ -9,7 +29,7 @@ function PlayerCard({ name, onRemove }) {
                 <h3 className="name">{name}</h3>
 
                 <div className="bid-history flex-wrap gap-half">
-                    {/* list? */}
+                    {/* list */}
                     <PastBid status="right" />
                     <PastBid status="wrong" />
                     <PastBid status="right" />
@@ -23,20 +43,14 @@ function PlayerCard({ name, onRemove }) {
 
             <div className="score-row">
                 <div className="bid">
-                    {/* function */}
-                    <button className="bid-btn bdr-round-1 bdr-3 bdr-solid bdr-white bg-black txt-white">
-                        <i className="fa-solid fa-plus"></i>
-                    </button>
+                    <BidPlus onPlus={add} />
 
                     {/* prop */}
                     <p className="bid-num">
-                        88
+                        {bid}
                     </p>
 
-                    {/* function */}
-                    <button className="bid-btn bdr-round-1 bdr-3 bdr-solid bdr-white bg-black txt-white">
-                        <i className="fa-solid fa-minus"></i>
-                    </button>
+                    <BidMinus onMinus={minus} />
                 </div>
 
                 {/* prop */}
