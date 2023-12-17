@@ -1,11 +1,4 @@
-import { useState } from "react";
-
-
-function Modal({ hidden, onAdd, onClose, hideWarning }) {
-    // STATE
-    const [input, setInput] = useState("");
-
-
+function Modal({ value, hidden, onAdd, onClose, onInput, hideWarning }) {
     // RETURN
     return (
         <div id="add-player-modal" className="modal" hidden={hidden}>
@@ -18,13 +11,13 @@ function Modal({ hidden, onAdd, onClose, hideWarning }) {
                 <div className="modal-middle">
                     <div className="modal-name-input">
                         <label htmlFor="new-name">player name</label>
-                        <input type="text" name="new-name" id="new-name" value={input} onInput={e => setInput(e.target.value)} />
+                        <input type="text" name="new-name" id="new-name" value={value} onInput={onInput} />
                     </div>
 
                     <p className="modal-warning" hidden={hideWarning}>please enter a name</p>
                 </div>
 
-                <button type="submit" id="submit-player-name" className="btn-default bdr-round-1 bdr-3 bdr-solid bdr-black bg-white" onClick={() => onAdd(input !== "", input)}>ADD</button>
+                <button type="submit" id="submit-player-name" className="btn-default bdr-round-1 bdr-3 bdr-solid bdr-black bg-white" onClick={onAdd}>ADD</button>
             </div>
 
         </div>
