@@ -11,7 +11,7 @@ function Modal({ value, hidden, onAdd, onClose, onInput, hideWarning }) {
                 <div className="modal-middle">
                     <div className="modal-name-input">
                         <label htmlFor="new-name">player name</label>
-                        <input type="text" name="new-name" id="new-name" value={value} onInput={onInput} />
+                        <input ref={i => i && i.focus()} type="text" name="new-name" id="new-name" value={value} onInput={onInput} />
                     </div>
 
                     <p className="modal-warning" hidden={hideWarning}>please enter a name</p>
