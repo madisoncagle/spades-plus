@@ -20,9 +20,9 @@ function Scoreboard() {
 
 
     // METHODS
-    function addPlayer(name) {
+    function addPlayer(canAdd, name) {
         // show warning if empty
-        if (name != "") {
+        if (canAdd) {
             // set players
             setPlayers([...players, { id: Date.now(), name }]);
             setHideModal(true);
@@ -46,7 +46,7 @@ function Scoreboard() {
     // RETURN
     return (
         <div className="scoreboard">
-            <Modal display={hideModal} onClose={toggleModal} onAdd={addPlayer} />
+            <Modal hidden={hideModal} onAdd={addPlayer} onClose={toggleModal} />
 
             <ul className="flex-center flex-wrap gap-2 no-bullets">
                 {/* <li>
