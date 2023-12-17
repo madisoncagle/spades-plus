@@ -48,32 +48,19 @@ function Scoreboard() {
         setNewName("");
     }
 
-    function handleInput(e) {
+    function handleKeyUp(e) {
         if (e.key === "Enter") {
             addPlayer(newName)
         }
-        else if (e.key === "Backspace") {
-            setNewName(newName.slice(0, -1));
-        }
-        else {
-            setNewName(newName.concat(e.key));
-        }
-
-        console.log(e.key);
-        console.log(newName);
     }
 
 
     // RETURN
     return (
         <div className="scoreboard">
-            <Modal value={newName} hidden={hideModal} onAdd={() => addPlayer(newName)} onClose={toggleModal} onInput={e => handleInput(e)} hideWarning={hideModalWarning} />
+            <Modal value={newName} hidden={hideModal} onInput={e => setNewName(e.target.value)} onAdd={() => addPlayer(newName)} onClose={toggleModal} onKeyUp={e => handleKeyUp(e)} hideWarning={hideModalWarning} />
 
             <ul className="flex-center flex-wrap gap-2 no-bullets">
-                {/* <li>
-                    <PlayerCard name="Default" onRemove={removePlayer} />
-                </li> */}
-
                 {playerList}
 
                 <li>

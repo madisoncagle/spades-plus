@@ -1,4 +1,4 @@
-function Modal({ value, hidden, onAdd, onClose, onInput, hideWarning }) {
+function Modal({ value, hidden, onAdd, onClose, onInput, onKeyUp, hideWarning }) {
     // RETURN
     return (
         <div id="add-player-modal" className="modal" hidden={hidden}>
@@ -11,7 +11,7 @@ function Modal({ value, hidden, onAdd, onClose, onInput, hideWarning }) {
                 <div className="modal-middle">
                     <div className="modal-name-input">
                         <label htmlFor="new-name">player name</label>
-                        <input ref={i => i && i.focus()} type="text" name="new-name" id="new-name" value={value} onKeyUp={onInput} />
+                        <input ref={i => i && i.focus()} type="text" name="new-name" id="new-name" value={value} onInput={onInput} onKeyUp={onKeyUp} />
                     </div>
 
                     <p className="modal-warning" hidden={hideWarning}>please enter a name</p>
