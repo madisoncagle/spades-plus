@@ -48,6 +48,13 @@ main {
     margin: 0 auto;
 }
 
+@media screen and (max-width: 1450px) {
+    .container {
+        /* padding: 0 24px; */
+        padding: 0 1.5rem;
+    }
+}
+
 .number {
     font-family: "Digital";
 }
@@ -162,6 +169,13 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@media screen and (max-width: 300px) {
+    .flex-space-between {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 }
 
 .flex-center {
@@ -373,12 +387,24 @@ main {
     width: 400px;
 }
 
+@media screen and (max-width: 450px) {
+    .modal-content {
+        width: 250px;
+    }
+}
+
 .modal-name-input {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
     gap: 0.5rem;
     margin: auto;
+}
+
+@media screen and (max-width: 450px) {
+    .modal-name-input {
+        flex-direction: column;
+    }
 }
 
 .modal-warning {
