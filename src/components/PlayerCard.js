@@ -62,7 +62,6 @@ function PlayerCard({ name, onRemove }) {
                 <div className="bid">
                     <BidPlus onPlus={add} />
 
-                    {/* prop */}
                     <p className="bid-num">
                         {bid}
                     </p>
@@ -70,7 +69,6 @@ function PlayerCard({ name, onRemove }) {
                     <BidMinus onMinus={minus} />
                 </div>
 
-                {/* prop */}
                 <p className="score number">
                     {score}
                 </p>

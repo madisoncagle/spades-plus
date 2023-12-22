@@ -11,6 +11,8 @@
     box-sizing: border-box;
     font-family: "Poppins";
     /* outline: 1px solid salmon; */
+    /* max-width: 100%; */
+    /* overflow-x: hidden; */
 }
 
 body {
@@ -234,21 +236,21 @@ main {
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    padding: 1.5rem;
+    gap: 1em;
+    padding: 1.5em;
     background-color: #000;
     color: #fff;
-    border-radius: 1.5rem;
-    box-shadow: 0.25rem 0.25rem rgba(85, 85, 85, 0.25);
-    min-width: 21.5rem;
+    border-radius: 1.5em;
+    box-shadow: 0.25em 0.25em rgba(85, 85, 85, 0.25);
+    min-width: 21.5em;
 }
 
 .close {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 1em;
+    right: 1em;
     color: rgba(255, 255, 255, 0.5);
-    font-size: 1.5rem;
+    font-size: 1.5em;
     transition: all 0.2s;
 }
 
@@ -261,22 +263,22 @@ main {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 1.5rem;
-    height: 3rem;
+    gap: 1.5em;
+    height: 3em;
 }
 
 .name {
-    font-size: 1.75rem;
+    font-size: 1.75em;
 }
 
 .bid-history {
-    width: 5.125rem;
+    width: 5.125em;
     /* height: 100%; */
 }
 
 .past-bid {
-    width: 0.625rem;
-    height: 0.625rem;
+    width: 0.625em;
+    height: 0.625em;
     border-radius: 50%;
 }
 
@@ -292,7 +294,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 7rem;
+    height: 7em;
 }
 
 .bid {
@@ -305,13 +307,13 @@ main {
 }
 
 .bid-btn {
-    padding: 0.25rem;
+    padding: 0.25em;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 2rem;
-    height: 2rem;
-    font-size: 1rem;
+    width: 2em;
+    height: 2em;
+    font-size: 1em;
 }
 
 .bid-btn:hover {
@@ -320,13 +322,13 @@ main {
 }
 
 .bid-num {
-    font-size: 1.5rem;
+    font-size: 1.5em;
     text-align: center;
     width: 100%;
 }
 
 .score {
-    font-size: 7rem;
+    font-size: 7em;
     width: 100%;
     text-align: center;
 }
@@ -343,7 +345,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     border-radius: 50%;
     width: 3.125rem;
     height: 3.125rem;
@@ -394,24 +396,12 @@ main {
     width: 400px;
 }
 
-@media screen and (max-width: 450px) {
-    .modal-content {
-        width: 250px;
-    }
-}
-
 .modal-name-input {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
     margin: auto;
-}
-
-@media screen and (max-width: 450px) {
-    .modal-name-input {
-        flex-direction: column;
-    }
 }
 
 .modal-warning {
@@ -473,4 +463,45 @@ main {
 #submit-player-name:hover {
     color: #fff;
     background-color: #000;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 400px) {
+    .card {
+        font-size: 0.65rem;
+    }
+
+    .cardholder {
+        flex-direction: column;
+    }
+
+    .yes-no-btn {
+        width: 2.03125rem;
+        height: 2.03125rem;
+    }
+
+    .bdr-3 {
+        border-width: 2px;
+    }
+    
+    .bdr-4 {
+        border-width: 3px;
+    }
+    
+    .bdr-5 {
+        border-width: 4px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .modal-content {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .modal-name-input {
+        flex-direction: column;
+    }
 }
