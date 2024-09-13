@@ -16,7 +16,7 @@ function PlayerCard({ name, onRemove }) {
     const pastBidList = pastBids.map((bid, i) => {
         return (
             <li key={i}>
-                <PastBid status={bid} />
+                <PastBid status={bid.result} />
             </li>
         )
     });
@@ -27,21 +27,32 @@ function PlayerCard({ name, onRemove }) {
         setBid(bid + 1);
     }
 
-    function minus() {
+    function subtract() {
         if (bid > 0) {
             setBid(bid - 1);
         }
     }
 
-    function gotIt() {
+    function incrementScore() {
         setScore(score + 10 + bid);
-        setPastBids(pastBids.concat("right"));
+        setPastBids(pastBids.concat({ bid: bid, result: "right" }));
         setBid(0);
     }
 
-    function nope() {
-        setPastBids(pastBids.concat("wrong"));
+    function zeroScore() {
+        setPastBids(pastBids.concat({ bid: bid, result: "wrong" }));
         setBid(0);
+    }
+
+    function undo() {
+        var lastBid = pastBids[pastBids.length - 1];
+        setPastBids(pastBids.slice(0, -1));
+
+        if (lastBid.result === "right") {
+            setScore(score - 10 - lastBid.bid);
+        }
+
+        setBid(lastBid.bid);
     }
 
 
@@ -56,6 +67,8 @@ function PlayerCard({ name, onRemove }) {
                 <ul className="bid-history flex-wrap gap-half no-bullets">
                     {pastBidList}
                 </ul>
+
+                <i className="fa-solid fa-undo undo" onClick={undo}></i>
             </div>
 
             <div className="score-row">
@@ -66,7 +79,7 @@ function PlayerCard({ name, onRemove }) {
                         {bid}
                     </p>
 
-                    <BidMinus onMinus={minus} />
+                    <BidMinus onMinus={subtract} />
                 </div>
 
                 <p className="score number">
@@ -74,9 +87,9 @@ function PlayerCard({ name, onRemove }) {
                 </p>
 
                 <div className="yes-no">
-                    <YesBtn onYes={gotIt} />
+                    <YesBtn onYes={incrementScore} />
 
-                    <NoBtn onNo={nope} />
+                    <NoBtn onNo={zeroScore} />
                 </div>
             </div>
         </div>
