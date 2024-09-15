@@ -1,6 +1,6 @@
 function NoBtn({ onNo }) {
     return (
-        <button onClick={onNo} className="yes-no-btn minus bdr-4 bdr-solid bdr-red bg-black txt-red">
+        <button onClick={onNo} className="yes-no-btn minus">
             <i className="fa-solid fa-xmark"></i>
         </button>
     );

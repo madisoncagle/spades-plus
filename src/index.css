@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 
 @font-face {
   font-family: "Digital";
@@ -9,7 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins";
+  font-family: "Lora";
   /* outline: 1px solid salmon; */
   /* max-width: 100%; */
   /* overflow-x: hidden; */
@@ -39,8 +39,27 @@ a {
   transition: all 0.2s;
 }
 
+header p {
+  font-family: "DM Sans", sans-serif;
+}
+
 main {
   flex: 1;
+  background-color: #f5f5f4;
+}
+
+footer {
+  color: white;
+  font-size: small;
+}
+
+footer p {
+  font-family: "DM Sans", sans-serif;
+}
+
+h1 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 1000;
 }
 
 /* CLASSES */
@@ -55,10 +74,6 @@ main {
     /* padding: 0 24px; */
     padding: 0 1.5rem;
   }
-}
-
-.number {
-  font-family: "Digital";
 }
 
 .btn-default {
@@ -236,11 +251,11 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  padding: 1.5em;
-  background-color: #000;
-  color: #fff;
+  padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+  background-color: white;
+  color: black;
   border-radius: 1.5em;
-  box-shadow: 0.25em 0.25em rgba(85, 85, 85, 0.25);
+  box-shadow: rgba(0, 0, 0, 0.5) 3px 3px 5px;
   min-width: 21.5em;
 }
 
@@ -248,14 +263,14 @@ main {
   position: absolute;
   top: 1em;
   right: 1em;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.5);
   font-size: 1.5em;
   transition: all 0.2s;
 }
 
 .close:hover {
   cursor: pointer;
-  color: #fff;
+  color: black;
 }
 
 .name-row {
@@ -290,14 +305,14 @@ main {
 }
 
 .undo {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.5);
   font-size: 1.2em;
   transition: all 0.2s;
 }
 
 .undo:hover {
-    cursor: pointer;
-    color: #fff;
+  cursor: pointer;
+  color: black;
 }
 
 .score-row {
@@ -324,11 +339,14 @@ main {
   width: 2em;
   height: 2em;
   font-size: 1em;
+  border: 3px solid black;
+  border-radius: 1rem;
+  background-color: transparent;
 }
 
 .bid-btn:hover {
-  background-color: #fff;
-  color: #000;
+  background-color: black;
+  color: white;
 }
 
 .bid-num {
@@ -339,6 +357,7 @@ main {
 
 .score {
   font-size: 7em;
+  font-weight: 700;
   width: 100%;
   text-align: center;
 }
@@ -359,14 +378,27 @@ main {
   border-radius: 50%;
   width: 3.125rem;
   height: 3.125rem;
+  border-width: 4px;
+  border-style: solid;
+  background-color: transparent;
 }
 
 .yes-no-btn:hover {
   color: #000;
 }
 
+.plus {
+  color: #0f0;
+  border-color: #0f0;
+}
+
 .plus:hover {
   background-color: #0f0;
+}
+
+.minus {
+  color: #f00;
+  border-color: #f00;
 }
 
 .minus:hover {
@@ -387,10 +419,8 @@ main {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.modal h3 {
+  font-weight: 700;
 }
 
 .modal-content {
@@ -406,12 +436,23 @@ main {
   box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
 }
 
+.modal-middle {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
 .modal-name-input {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
   margin: auto;
+}
+
+.modal-name-input label,
+.modal-name-input input {
+  font-family: "DM Sans", sans-serif;
 }
 
 .modal-warning {
