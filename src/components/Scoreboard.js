@@ -60,7 +60,7 @@ function Scoreboard() {
         <div className="scoreboard">
             <Modal value={newName} hidden={hideModal} onInput={e => setNewName(e.target.value)} onAdd={() => addPlayer(newName)} onClose={toggleModal} onKeyUp={e => handleKeyUp(e)} hideWarning={hideModalWarning} />
 
-            <ul className="flex-center flex-wrap gap-2 no-bullets cardholder">
+            <ul className="cardholder">
                 {playerList}
 
                 <li>

@@ -1,6 +1,6 @@
-function PastBid({ status }) {
+function PastBid({ bid, status }) {
     return (
-        <div className={`past-bid ${status}`}></div>
+        <p className={`past-bid ${status}`}>{bid}</p>
     );
 }
 

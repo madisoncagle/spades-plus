@@ -16,7 +16,7 @@ function PlayerCard({ name, onRemove }) {
     const pastBidList = pastBids.map((bid, i) => {
         return (
             <li key={i}>
-                <PastBid status={bid.result} />
+                <PastBid bid={bid.bid} status={bid.result} />
             </li>
         )
     });
@@ -37,22 +37,36 @@ function PlayerCard({ name, onRemove }) {
         setScore(score + 10 + bid);
         setPastBids(pastBids.concat({ bid: bid, result: "right" }));
         setBid(0);
+
+        var undoBtn = document.getElementById("undo-btn");
+        undoBtn.style.visibility = "visible";
     }
 
     function zeroScore() {
         setPastBids(pastBids.concat({ bid: bid, result: "wrong" }));
         setBid(0);
+
+        var undoBtn = document.getElementById("undo-btn");
+        undoBtn.style.visibility = "visible";
     }
 
     function undo() {
-        var lastBid = pastBids[pastBids.length - 1];
-        setPastBids(pastBids.slice(0, -1));
+        if (pastBids.length > 0) {
+            var lastBid = pastBids[pastBids.length - 1];
+            setPastBids(pastBids.slice(0, -1));
 
-        if (lastBid.result === "right") {
-            setScore(score - 10 - lastBid.bid);
+            if (lastBid.result === "right") {
+                setScore(score - 10 - lastBid.bid);
+            }
+
+            setBid(lastBid.bid);
         }
 
-        setBid(lastBid.bid);
+        // why is it 1, pls help
+        if (pastBids.length === 1) {
+            var undoBtn = document.getElementById("undo-btn");
+            undoBtn.style.visibility = "hidden";
+        }
     }
 
 
@@ -61,35 +75,34 @@ function PlayerCard({ name, onRemove }) {
         <div className="card">
             <i className="fa-solid fa-xmark close" onClick={onRemove}></i>
 
-            <div className="name-row">
+            <div className="card-upper">
                 <h3 className="name">{name}</h3>
 
-                <ul className="bid-history flex-wrap gap-half no-bullets">
-                    {pastBidList}
-                </ul>
+                <div className="bid-row">
+                    <ul className="bid-history">
+                        {pastBidList}
+                    </ul>
 
-                <i className="fa-solid fa-undo undo" onClick={undo}></i>
+                    <i id="undo-btn" className="fa-solid fa-undo undo" onClick={undo}></i>
+                </div>
             </div>
 
-            <div className="score-row">
-                <div className="bid">
-                    <BidPlus onPlus={add} />
-
-                    <p className="bid-num">
-                        {bid}
-                    </p>
-
-                    <BidMinus onMinus={subtract} />
-                </div>
-
-                <p className="score number">
+            <div className="card-lower">
+                <p className="score">
                     {score}
                 </p>
 
-                <div className="yes-no">
-                    <YesBtn onYes={incrementScore} />
-
-                    <NoBtn onNo={zeroScore} />
+                <div className="controls">
+                    <div className="bid">
+                        <BidMinus onMinus={subtract} />
+                        <p className="bid-num">{bid}</p>
+                        <BidPlus onPlus={add} />
+                    </div>
+                    
+                    <div className="yes-no">
+                        <NoBtn onNo={zeroScore} />
+                        <YesBtn onYes={incrementScore} />
+                    </div>
                 </div>
             </div>
         </div>
