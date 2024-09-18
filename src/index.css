@@ -77,7 +77,6 @@ h1 {
 
 @media screen and (max-width: 1450px) {
   .container {
-    /* padding: 0 24px; */
     padding: 0 1.5rem;
   }
 }
@@ -264,6 +263,7 @@ h1 {
 .close:hover {
   cursor: pointer;
   color: var(--red);
+  /* transform: rotate(-90deg); */
 }
 
 .card-upper {
@@ -445,7 +445,7 @@ h1 {
   background-color: #fff;
   margin: auto;
   padding: 1.5rem;
-  border-radius: 24px;
+  border-radius: 0.7rem;
   width: 400px;
   box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
 }
@@ -467,6 +467,7 @@ h1 {
 .modal-name-input label,
 .modal-name-input input {
   font-family: "DM Sans", sans-serif;
+  font-size: 1.2rem;
 }
 
 .modal-warning {
@@ -487,7 +488,7 @@ h1 {
 
 .modal-close:hover,
 .modal-close:focus {
-  color: black;
+  color: var(--red);
   cursor: pointer;
 }
 
@@ -497,20 +498,83 @@ h1 {
   margin: 0 auto;
 }
 
-#add-player-btn {
+/* #add-player-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* gap: 0.2rem; */
   color: #000;
   background-color: transparent;
-  /* border: 5px solid #000; */
   border-radius: 50%;
   height: 5rem;
   width: 5rem;
+} */
+
+#add-player-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 4rem;
+  height: 5.6rem;
+  border-style: none;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.5) 3px 3px 5px;
+  color: black;
+  background-color: white;
+  font-family: "Lora", serif;
+  font-weight: 700;
+  text-align: center;
+  padding: 0.5rem;
 }
 
-#add-player-btn .fa-user {
+#add-player-btn:hover {
+  color: white;
+  background-color: black;
+  /* transform: rotate(10deg); */
+
+  .name-line {
+    background-color: white;
+  }
+}
+
+.name-line {
+  width: 1.75rem;
+  height: 0.15rem;
+  background-color: black;
+}
+
+.add-player-plus {
+  font-size: 3.5rem;
+  line-height: 2.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+.tiny-rectangles {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tiny-rectangle {
+  width: 1.2rem;
+  height: 0.5rem;
+  border-radius: 0.1rem;
+  border-width: 0.1rem;
+  border-style: solid;
+  background-color: transparent;
+}
+
+.tiny-rectangle.red {
+  border-color: var(--red);
+}
+
+.tiny-rectangle.blue {
+  border-color: var(--blue);
+}
+
+/* #add-player-btn .fa-user {
   font-size: 2rem;
   margin-left: 0.3rem;
 }
@@ -522,11 +586,22 @@ h1 {
 #add-player-btn:hover {
   color: #fff;
   background-color: #000;
+} */
+
+#submit-player-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  background-color: transparent;
+  border: 0.15rem solid black;
+  border-radius: 0.35rem;
+  width: 6rem;
+  margin: 0 auto;
+  padding: 0.3rem 0.5rem;
 }
 
 #submit-player-name:hover {
-  color: #fff;
-  background-color: #000;
+  color: white;
+  background-color: black;
 }
 
 /* MEDIA QUERIES */
