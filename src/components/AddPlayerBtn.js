@@ -6,7 +6,7 @@ function AddPlayerBtn({ onAdd }) {
         // </button>
 
         <button type="button" id="add-player-btn" onClick={onAdd}>
-            <span className="name-line"></span>
+            <span className="name-line">New player</span>
 
             <span className="add-player-plus">+</span>
 
