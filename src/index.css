@@ -222,6 +222,10 @@ menu {
     flex-direction: column;
     gap: 0.5rem;
   }
+
+  menu {
+    font-size: 0.65rem;
+  }
 }
 
 .justify-center {
@@ -660,5 +664,11 @@ menu {
 
   .modal-name-input {
     flex-direction: column;
+  }
+
+  menu {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-end;
   }
 }
