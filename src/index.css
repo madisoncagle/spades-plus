@@ -269,7 +269,6 @@ menu {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* gap: 1.5rem; */
   padding: 3rem 1.5rem;
   background-color: white;
   color: black;
@@ -525,7 +524,7 @@ menu {
   margin: 0 auto;
 }
 
-/* #add-player-btn {
+#add-player-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -534,47 +533,6 @@ menu {
   border-radius: 50%;
   height: 5rem;
   width: 5rem;
-} */
-
-#add-player-btn {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  width: 4rem;
-  height: 5.6rem;
-  border-style: none;
-  border-radius: 0.5rem;
-  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
-  color: black;
-  background-color: white;
-  font-family: "Lora", serif;
-  font-weight: 700;
-  text-align: center;
-  padding: 0.5rem;
-}
-
-#add-player-btn:hover {
-  color: white;
-  background-color: black;
-  /* transform: rotate(10deg); */
-
-  .name-line {
-    color: white;
-  }
-
-  /* .add-player-plus {
-    transform: rotate(90deg);
-  } */
-}
-
-.name-line {
-  /* width: 1.75rem;
-  height: 0.15rem;
-  background-color: black; */
-
-  text-align: left;
-  font-size: 0.5rem;
 }
 
 .add-player-plus {
@@ -585,31 +543,7 @@ menu {
   /* transition: all 0.2s; */
 }
 
-.tiny-rectangles {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.tiny-rectangle {
-  width: 1.2rem;
-  height: 0.5rem;
-  border-radius: 0.15rem;
-  border-width: 0.1rem;
-  border-style: solid;
-  background-color: transparent;
-}
-
-.tiny-rectangle.red {
-  border-color: var(--red);
-}
-
-.tiny-rectangle.blue {
-  border-color: var(--blue);
-}
-
-/* #add-player-btn .fa-user {
+#add-player-btn .fa-user {
   font-size: 2rem;
   margin-left: 0.3rem;
 }
@@ -621,7 +555,7 @@ menu {
 #add-player-btn:hover {
   color: #fff;
   background-color: #000;
-} */
+}
 
 #submit-player-name {
   font-size: 1.1rem;
