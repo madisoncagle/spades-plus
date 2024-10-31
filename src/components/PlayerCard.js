@@ -87,22 +87,20 @@ function PlayerCard({ name, onRemove }) {
                 </div>
             </div>
 
-            <div className="card-lower">
-                <p className="score">
-                    {score}
-                </p>
+            <p className="score">
+                {score}
+            </p>
 
-                <div className="controls">
-                    <div className="bid">
-                        <BidMinus onMinus={subtract} />
-                        <p className="bid-num">{bid}</p>
-                        <BidPlus onPlus={add} />
-                    </div>
-                    
-                    <div className="yes-no">
-                        <NoBtn onNo={zeroScore} />
-                        <YesBtn onYes={incrementScore} />
-                    </div>
+            <div className="controls">
+                <div className="bid">
+                    <BidPlus onPlus={add} />
+                    <p className="bid-num">{bid}</p>
+                    <BidMinus onMinus={subtract} />
+                </div>
+
+                <div className="yes-no">
+                    <YesBtn onYes={incrementScore} />
+                    <NoBtn onNo={zeroScore} />
                 </div>
             </div>
         </div>
