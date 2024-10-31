@@ -6,11 +6,11 @@ function Modal({ value, hidden, onAdd, onClose, onInput, onKeyUp, hideWarning })
             <div className="modal-content">
                 <i className="fa-solid fa-xmark modal-close" onClick={onClose}></i>
 
-                <h3>NEW PLAYER</h3>
+                <h3>New Player</h3>
 
                 <div className="modal-middle">
                     <div className="modal-name-input">
-                        <label htmlFor="new-name">Name</label>
+                        <label htmlFor="new-name">NAME</label>
                         <input ref={i => i && i.focus()} type="text" name="new-name" id="new-name" value={value} onInput={onInput} onKeyUp={onKeyUp} />
                     </div>
 

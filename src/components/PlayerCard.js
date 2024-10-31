@@ -38,18 +38,21 @@ function PlayerCard({ name, onRemove }) {
         setPastBids(pastBids.concat({ bid: bid, result: "right" }));
         setBid(0);
 
-        var undoBtn = document.getElementById("undo-btn");
-        undoBtn.style.visibility = "visible";
+        // broken
+        // var undoBtn = document.getElementById("undo-btn");
+        // undoBtn.style.visibility = "visible";
     }
 
     function zeroScore() {
         setPastBids(pastBids.concat({ bid: bid, result: "wrong" }));
         setBid(0);
 
-        var undoBtn = document.getElementById("undo-btn");
-        undoBtn.style.visibility = "visible";
+        // broken
+        // var undoBtn = document.getElementById("undo-btn");
+        // undoBtn.style.visibility = "visible";
     }
 
+    // broken
     function undo() {
         if (pastBids.length > 0) {
             var lastBid = pastBids[pastBids.length - 1];
@@ -62,11 +65,11 @@ function PlayerCard({ name, onRemove }) {
             setBid(lastBid.bid);
         }
 
-        // why is it 1, pls help
-        if (pastBids.length === 1) {
-            var undoBtn = document.getElementById("undo-btn");
-            undoBtn.style.visibility = "hidden";
-        }
+        // why is it 1, pls help -- now broken
+        // if (pastBids.length === 1) {
+        //     var undoBtn = document.getElementsByClassName("undo");
+        //     undoBtn.style.visibility = "hidden";
+        // }
     }
 
 
@@ -83,7 +86,7 @@ function PlayerCard({ name, onRemove }) {
                         {pastBidList}
                     </ul>
 
-                    <i id="undo-btn" className="fa-solid fa-undo undo" onClick={undo}></i>
+                    <i className="fa-solid fa-undo undo" onClick={undo}></i>
                 </div>
             </div>
 

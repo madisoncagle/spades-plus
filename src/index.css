@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
 
 :root {
-  --blue: #3b82f6;
-  --darkblue: #335291;
+  /* --blue: #3b82f6;
+  --darkblue: #335291; */
 
   --navy: #1a1a2e;
   --gold: #d4af37;
@@ -23,7 +23,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Source Sans 3";
+  font-family: "Source Sans 3", sans-serif;
   /* outline: 1px solid salmon; */
   /* max-width: 100%; */
   /* overflow-x: hidden; */
@@ -184,8 +184,12 @@ menu {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1.5rem;
   list-style: none;
+}
+
+.cardholder > li {
+  width: calc(50% - 0.75rem);
 }
 
 /* player card */
@@ -194,7 +198,7 @@ menu {
   display: flex;
   /* flex-direction: column; */
   justify-content: space-between;
-  padding: 1.5rem 1rem;
+  padding: 1rem 1.5rem;
   background-color: var(--off-white);
   color: black;
   border: 3px solid var(--mid-light-gray);
@@ -202,7 +206,6 @@ menu {
   box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
   /* width: 20rem;
   height: 28rem; */
-  width: 664px;
 }
 
 .close {
@@ -225,7 +228,7 @@ menu {
   flex-direction: column;
   gap: 0.2rem;
   z-index: 1;
-  width: 200px;
+  width: 210px;
 }
 
 .name {
@@ -266,7 +269,7 @@ menu {
   color: rgba(0, 0, 0, 0.5);
   font-size: 1.2em;
   transition: all 0.2s;
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 
 .undo:hover {
@@ -280,20 +283,14 @@ menu {
   font-weight: 900;
   color: var(--navy);
   text-align: center;
-  line-height: 5rem;
+  line-height: 4.2rem;
   z-index: 0;
-}
-
-.card-lower {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
 }
 
 .controls {
   display: flex;
   gap: 1rem;
-  padding: 0 18px 0 0;
+  padding: 0 1.125rem 0 0;
 }
 
 .bid {
@@ -301,7 +298,7 @@ menu {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.3rem;
   z-index: 1;
 }
 
@@ -313,7 +310,7 @@ menu {
 }
 
 .bid-btn.plus {
-  border-width: 0 0.6rem 1.04rem 0.6rem;
+  border-width: 0 0.5625rem 0.975rem 0.5625rem;
   border-color: transparent transparent var(--navy) transparent;
 }
 
@@ -322,7 +319,7 @@ menu {
 }
 
 .bid-btn.minus {
-  border-width: 1.04rem 0.6rem 0 0.6rem;
+  border-width: 0.975rem 0.5625rem 0 0.5625rem;
   border-color: var(--navy) transparent transparent transparent;
 }
 
@@ -344,12 +341,12 @@ menu {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0.5rem;
   height: 100%;
 }
 
 .yes-no-btn {
-  font-size: large;
+  font-size: 1.05rem;
   font-weight: 600;
   text-align: center;
   padding: 0.1rem 0.5rem;
@@ -429,13 +426,14 @@ menu {
   margin: auto;
 }
 
-.modal-name-input label,
-.modal-name-input input {
-  font-size: 1.2rem;
+.modal-name-input label {
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
 .modal-name-input input {
-  font-weight: 600;
+  font-family: "Roboto Slab", serif;
+  font-size: 1.2rem;
   color: var(--navy);
   background-color: var(--off-white);
   border: 1px solid var(--navy);
@@ -498,7 +496,7 @@ menu {
 
 #submit-player-name {
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 900;
   background-color: transparent;
   border: 3px solid var(--navy);
   border-radius: 0.35rem;
