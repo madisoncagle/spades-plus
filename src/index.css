@@ -47,7 +47,8 @@ code {
 }
 
 button,
-a {
+a,
+.link {
   cursor: pointer;
   text-decoration: none;
   transition: all 0.2s;
@@ -177,35 +178,29 @@ menu {
 
 .link:hover {
   color: var(--gold);
+  cursor: pointer;
 }
 
 .cardholder {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
   list-style: none;
 }
 
 .cardholder > li {
-  width: calc(50% - 0.75rem);
+  margin-top: 1.5rem;
 }
 
 /* player card */
 .card {
   position: relative;
   display: flex;
-  /* flex-direction: column; */
   justify-content: space-between;
+  gap: 2rem;
   padding: 1rem 1.5rem;
   background-color: var(--off-white);
   color: black;
   border: 3px solid var(--mid-light-gray);
   border-radius: 0.5rem;
-  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
-  /* width: 20rem;
-  height: 28rem; */
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px, rgba(0, 0, 0, 0.15) 0px 0px 2px;
 }
 
 .close {
@@ -226,9 +221,8 @@ menu {
 .card-upper {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
-  z-index: 1;
-  width: 210px;
+  gap: 0.3rem;
+  width: 100%;
 }
 
 .name {
@@ -239,8 +233,6 @@ menu {
 
 .bid-row {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
   gap: 0.5rem;
 }
 
@@ -269,7 +261,6 @@ menu {
   color: rgba(0, 0, 0, 0.5);
   font-size: 1.2em;
   transition: all 0.2s;
-  /* visibility: hidden; */
 }
 
 .undo:hover {
@@ -466,18 +457,21 @@ menu {
 
 #root {
   margin: 0 auto;
+  width: 100%;
 }
 
 #add-player-btn {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: auto;
   color: var(--navy);
   background-color: transparent;
   border-radius: 50%;
   height: 5rem;
   width: 5rem;
   border: 5px solid var(--navy);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px, rgba(0, 0, 0, 0.15) 0px 0px 2px;
 }
 
 #add-player-btn .fa-user {
